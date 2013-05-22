@@ -1,0 +1,773 @@
+@import url('flat-ui.css');
+
+body{
+  font: 14px/1.231 "Lato", sans-serif;
+  background: #34495E;/* #1E648C;*/
+  
+  color: #fff;
+}
+
+
+/*Container*/
+
+.container{
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.container > input, .container > a{
+  cursor: pointer;
+  font-size: 18px;
+  height: 2.5em;
+  line-height: 2.5em;
+  position: fixed;
+  text-transform: uppercase;
+  top: 0;
+  width: 20%;
+}
+
+.container > input,
+.container > input > div{
+  opacity: 0;
+  z-index: 10;
+}
+
+.container > a{
+  background: #3D3E3E;
+  
+  text-align: center;
+  z-index: 9;
+}
+
+.container:before{
+  /*background: #000;*/
+  content: '';
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 2.5em;
+  z-index: 8;
+}
+
+.logo{
+  background-image: url(../images/logo.png);
+  -webkit-background-size: 170px 170px;
+  -moz-background-size: 170px 170px;
+  background-size: 170px 170px;
+  
+  border-radius: 90px;
+  display: inline-block;
+  height: 170px;
+  /*left: 500px;*/
+  margin-left: 50px;
+  /*margin-top: 100px;*/
+  position: relative;
+  width: 170px;
+  z-index: 100;
+}
+
+
+
+
+input:checked + a,
+input:checked:hover +a {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+.scroll{
+  position: relative;
+}
+
+.scroll, .panel{
+  height: 100%;
+  width: 100%;
+}
+
+.panel {
+  /*background: #074784;*/
+  overflow: hidden;
+}
+
+input:hover +a{
+  background: #2980B9;/
+}
+
+.scroll,
+input:checked +a,
+input:checked:hover {
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+
+  /* aceleración por hardware */
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+}
+
+/*Efecto de transicion scroll*/
+
+#radio-1:checked ~ .scroll {
+  -webkit-transform: translateY(0%);
+  -moz-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  transform: translateY(0%);
+}
+#radio-2:checked ~ .scroll {
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+}
+#radio-3:checked ~ .scroll {
+  -webkit-transform: translateY(-200%);
+  -moz-transform: translateY(-200%);
+  -o-transform: translateY(-200%);
+  -ms-transform: translateY(-200%);
+  transform: translateY(-200%);
+}
+#radio-4:checked ~ .scroll {
+  -webkit-transform: translateY(-300%);
+  -moz-transform: translateY(-300%);
+  -o-transform: translateY(-300%);
+  -ms-transform: translateY(-300%);
+  transform: translateY(-300%);
+}
+#radio-5:checked ~ .scroll {
+  -webkit-transform: translateY(-400%);
+  -moz-transform: translateY(-400%);
+  -o-transform: translateY(-400%);
+  -ms-transform: translateY(-400%);
+  transform: translateY(-400%);
+}
+
+/* Bg color*/
+.color-1 {
+  /*position: absolute;
+  background-image: url('img/ray3.png'), url('img/shine.png');
+  background-repeat: no-repeat;*/
+}
+
+.color-2 {
+  
+  /*background:#005dc7;*/
+}
+
+.color-3 {
+  
+  /*background:#005dc7;*/
+}
+
+.color-4 {
+  
+  /*background:#005dc7;*/
+}
+.color-5 {
+  
+  /*background:#005dc7;*/
+}
+
+
+
+
+.panel h2{
+  color: #fff;
+  font-family: 'Helvetica', Arial;
+  font-size: 3em;
+  font-weight: 700;
+  left: 0%;
+  letter-spacing: 1px;
+  padding: 0;
+  position: relative;
+  text-align: center;
+  text-shadow: 1px 1px 3px #dfdfdf;
+  top: 35%;
+  -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.panel h2:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+}
+
+
+#radio-1:checked ~ .scroll #home h2,
+#radio-2:checked ~ .scroll #service h2,
+#radio-3:checked ~ .scroll #support h2,
+#radio-4:checked ~ .scroll #delivery h2,
+#radio-5:checked ~ .scroll #contact h2 {
+
+  -webkit-animation: moveDown 0.8s ease-in-out 0.4s backwards;
+  -moz-animation: moveDown 0.8s ease-in-out 0.4s backwards;
+  -o-animation: moveDown 0.8s ease-in-out 0.4s backwards;
+  -ms-animation: moveDown 0.8s ease-in-out 0.4s backwards;
+  animation: moveDown 0.8s ease-in-out 0.4s backwards;
+}
+
+@-webkit-keyframes moveDown{
+  0% {
+    -webkit-transform: translateY(-50px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* Media Queries */
+
+
+@media screen and (max-width: 360px) {
+  .container > a {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .panel h2 {
+    font-size: 42px;
+  }
+
+  .panel p {
+    width: 90%;
+    left: 5%;
+    margin-top: 0;
+  }
+
+  .container > a {
+    font-size: 13px;
+  }
+}
+
+/* Footer */
+
+
+footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 34px;
+  text-align: center;
+  /*background:#000;*/
+}
+
+
+footer a {
+  z-index: 10;
+  font-weight: 700;
+  background: #e23a6e;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
+  padding: 0 5px;
+
+}
+/*****************************************************************************************************/
+.fr_jeluco {
+  width:49.2%;
+  font-size:1.5em;
+  margin:1.3em 17.8% 0 43.4%;
+  min-height:8.3em
+}
+.fr_jeluco .fr-text {
+  min-width:100%
+}
+.fr_nofewo {
+  width:100%;
+  margin:1.75em auto 0;
+  padding:1px 0 0 0;
+  min-height:32.8em
+}
+.fr_nofewo:after {
+  content:".";
+  display:block;
+  clear:both;
+  visibility:hidden;
+  line-height:0;
+  height:0
+}
+.fr_cenuti {
+  width:22.7%;
+  font-size:3em;
+  margin:.6em 33.4% 0 43.7%;
+  color:#fdfdfd;
+  min-height:1.2em
+}
+.fr_cenuti .fr-text {
+  min-width:100%
+}
+.fr_ficosa {
+  width:22.4%;
+  font-weight:bold;
+  font-size:3em;
+  text-align:left;
+  margin:1.7em 37.3% 0 47.3%;
+  color:#fff;
+  min-height:2.5em
+}
+.fr_ficosa .fr-text {
+  min-width:100%
+}
+.fr_dadopu {
+  top:2em;
+  left:1em;
+  width:21%;
+  font-weight:bold;
+  font-size:2.5em;
+  text-align:left;
+  margin:1em auto 0 auto;
+  color:#fff;
+  position:relative;
+  min-height:2em
+}
+.fr_dadopu .fr-text {
+  min-width:100%
+}
+.fr_ceteke {
+  color: #aaa;
+  top:6em;
+  left:8em;
+  width:35%;
+  margin:1em auto 0 auto;
+  position:relative;
+  min-height:7em
+}
+.fr_ceteke .fr-text {
+  min-width:100%
+}
+
+/*********FORMULARIO***************/
+
+.contact {
+  background-size: 768px 320px;
+  color: white;
+  margin-bottom: 77px;
+  padding: 38px 38px 267px;
+  position: relative; }
+
+.contact-screen {
+  background-color: #9FC9E1;
+  min-height: 317px;
+  padding: 50px 199px 33px 306px; }
+
+.contact-icon {
+  left: 200px;
+  position: absolute;
+  top: 160px;
+  width: 96px; }
+  .contact-icon > img {
+    display: block;
+    margin-bottom: 6px;
+    width: 100%; }
+  .contact-icon > h4 {
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 34px;
+    opacity: 0.95; }
+    .contact-icon > h4 small {
+      color: inherit;
+      display: block;
+      font-size: inherit;
+      font-weight: 700; }
+
+.contact-form {
+  width: 700px;
+  background-color: #eceff1;
+  border-radius: 6px;
+  padding: 24px 23px 20px;
+  position: relative; }
+  .contact-form:before {
+    content: "";
+    border-style: solid;
+    border-width: 12px 12px 12px 0;
+    border-color: transparent #eceff1 transparent transparent;
+    height: 0px;
+    position: absolute;
+    left: -12px;
+    top: 35px;
+    width: 0;
+    -webkit-transform: rotate(360deg); }
+  .contact-form .columns{
+    background: #ccc;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    color: black;
+    font-size: 15px;
+    margin: 5px;
+    padding: 10px;
+    width: 310px;
+    display: inline-block;
+  }
+  .contact-form .control-group {
+    margin-bottom: 6px;
+    position: relative; }
+  .contact-form .contact-field {
+    border-color: transparent;
+    font-size: 17px;
+    padding-bottom: 11px;
+    padding-top: 11px;
+    text-indent: 3px;
+    width: 299px; }
+    .contact-form .contact-field:focus + .contact-field-icon {
+      color: #1abc9c; }
+  .contact-form .contact-field-icon {
+    color: #bfc9ca;
+    font-size: 16px;
+    position: absolute;
+    right: 13px;
+    top: 14px;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden; }
+
+.contact-link {
+  color: #bfc9ca;
+  display: block;
+  font-size: 13px;
+  margin-top: 15px;
+  text-align: center; }
+
+/************* END FORM ***********/
+
+@media screen and (max-width:1024px) {
+  .fr_jeluco {
+    margin:1.9em 17.8% 0 33.2%
+  }
+
+  .fr_nofewo:after {
+    content:".";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    line-height:0;
+    height:0
+  }
+
+  .fr_cenuti {
+    width:23.7%;
+    min-height:2.5em
+  }
+  .fr_cenuti .fr-text {
+    min-width:100%
+  }
+
+  .fr_ficosa {
+    width:29.2%;
+    min-height:2.5em
+  }
+  .fr_ficosa .fr-text {
+    min-width:100%
+  }
+
+  .fr_dadopu {
+    top:2em;
+    left:1em;
+    width:27%;
+    font-size:2.5em;
+    text-align:left;
+    margin:1em auto 0 auto;
+    position:relative;
+    min-height:2em
+  }
+  .fr_dadopu .fr-text {
+    min-width:100%
+  }
+
+  .fr_ceteke {
+    top:6em;
+    left:6em;
+    width:38%;
+    text-align:left;
+    margin:1em auto 0 auto;
+    position:relative;
+    min-height:2em
+  }
+  .fr_ceteke .fr-text {
+    min-width:100%
+  }
+
+  /*Formulario*/
+
+  .contact {
+  background-size: 480px 320px;
+  color: white;
+  margin-bottom: 77px;
+  padding: 38px 38px 167px;
+  position: relative; }
+
+.contact-screen {
+  background-color: #1abc9c;
+  min-height: 117px;
+  padding: 50px 199px 33px 106px; }
+
+.contact-icon {
+  left: 200px;
+  position: absolute;
+  top: 160px;
+  width: 96px; }
+  .contact-icon > img {
+    display: block;
+    margin-bottom: 6px;
+    width: 100%; }
+  .contact-icon > h4 {
+    font-size: 17px;
+    font-weight: 200;
+    line-height: 34px;
+    opacity: 0.95; }
+    .contact-icon > h4 small {
+      color: inherit;
+      display: block;
+      font-size: inherit;
+      font-weight: 700; }
+
+.contact-form {
+  width: 700px;
+  background-color: #eceff1;
+  border-radius: 6px;
+  padding: 24px 23px 20px;
+  position: relative; }
+  .contact-form:before {
+    content: "";
+    border-style: solid;
+    border-width: 12px 12px 12px 0;
+    border-color: transparent #eceff1 transparent transparent;
+    height: 0px;
+    position: absolute;
+    left: -12px;
+    top: 35px;
+    width: 0;
+    -webkit-transform: rotate(360deg); }
+  .contact-form .columns{
+    background: #ccc;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    color: black;
+    font-size: 15px;
+    margin: 5px;
+    padding: 10px;
+    width: 310px;
+    display: inline-block;
+  }
+  .contact-form .control-group {
+    margin-bottom: 6px;
+    position: relative; }
+  .contact-form .contact-field {
+    border-color: transparent;
+    font-size: 17px;
+    padding-bottom: 11px;
+    padding-top: 11px;
+    text-indent: 3px;
+    width: 299px; }
+    .contact-form .contact-field:focus + .contact-field-icon {
+      color: #1abc9c; }
+  .contact-form .contact-field-icon {
+    color: #bfc9ca;
+    font-size: 16px;
+    position: absolute;
+    right: 13px;
+    top: 14px;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden; }
+}
+
+@media screen and (max-width:768px) {
+  .fr_jeluco {
+    margin:1.7em 17.8% 0 32.8%
+  }
+
+  .fr_nofewo:after {
+    content:".";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    line-height:0;
+    height:0
+  }
+
+  .fr_cenuti {
+    width:37.3%;
+    margin:.2em 33.4% 0 30%;
+    min-height:2.5em
+  }
+  .fr_cenuti .fr-text {
+    min-width:100%
+  }
+
+  .fr_ficosa {
+    width:36.8%;
+    margin:1.3em 33.3% 0 47.9%;
+    min-height:2.5em
+  }
+  .fr_ficosa .fr-text {
+    min-width:100%
+  }
+
+  .fr_dadopu {
+    left:1em;
+    width:35%;
+    font-size:2.5em;
+    text-align:left;
+    margin:1em auto 0 auto;
+    position:relative;
+    min-height:2em
+  }
+  .fr_dadopu .fr-text {
+    min-width:100%
+  }
+
+  
+  .fr_ceteke {
+    left:3.4em;
+    margin:1em auto 0 auto;
+    position:relative
+  }
+}
+
+@media screen and (max-width:480px) {
+  .fr_jeluco {
+    width:75%;
+    margin:.08em 17.8% 0 11.3%;
+    min-height:15.24em
+  }
+  .fr_jeluco .fr-text {
+    min-width:100%
+  }
+
+   .fr_nofewo:after {
+    content:".";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    line-height:0;
+    height:0
+  }
+
+  .fr_cenuti {
+    width:52.7%;
+    margin:.45em 33.4% 0 14.9%;
+    min-height:3em
+  }
+  .fr_cenuti .fr-text {
+    min-width:100%
+  }
+
+  .fr_ficosa {
+    width:62.5%;
+    margin:1.5em 33% 0 19.9%;
+    min-height:2.6em
+  }
+  .fr_ficosa .fr-text {
+    min-width:100%
+  }
+
+  .fr_dadopu {
+    left:0;
+    width:55%;
+    font-size:2.5em;
+    text-align:center;
+    margin:1em auto 0 auto;
+    position:relative;
+    min-height:2em
+  }
+  .fr_dadopu .fr-text {
+    min-width:100%
+  }
+
+  .fr_ceteke {
+    left:0;
+    width:75%;
+    text-align:center;
+    margin:1em auto 0 auto;
+    position:relative;
+    min-height:8em
+  }
+  .fr_ceteke .fr-text {
+    min-width:100%
+  }
+}
+
+@media screen and (max-width:320px) {
+  .fr_jeluco {
+    width:84.6%;
+    font-size:1.2em;
+    margin:.7em 17.8% 0 7.6%;
+    min-height:15em
+  }
+  .fr_jeluco .fr-text {
+    min-width:100%
+  }
+
+  .fr_nofewo {
+    width:100%;
+    min-height:34.1em
+  }
+  .fr_nofewo:after {
+    content:".";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    line-height:0;
+    height:0
+  }
+
+  .fr_cenuti {
+    width:80%;
+    margin:.3em 33.4% 0 9.9%;
+    min-height:2.6em
+  }
+  .fr_cenuti .fr-text {
+    min-width:100%
+  }
+
+   .fr_ficosa {
+    width:82.1%;
+    margin:1em 7% 0 10%;
+    min-height:2.5em
+  }
+  .fr_ficosa .fr-text {
+    min-width:100%
+  }
+
+  .fr_dadopu {
+    width:80%;
+    font-size:2.5em;
+    margin:1em auto 0 auto;
+    min-height:2em
+  }
+  .fr_dadopu .fr-text {
+    min-width:100%
+  }
+
+  .fr_ceteke {
+    width:87%;
+    text-align:center;
+    margin:1em auto 0 auto;
+    min-height:11em
+  }
+  .fr_ceteke .fr-text {
+    min-width:100%
+  }
+
+}

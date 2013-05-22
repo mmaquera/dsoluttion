@@ -1,0 +1,64 @@
+
+
+      <p>
+              <label for="nombre">Nombre: </label>
+              <input type="text" name="nombre" id="nombre"
+            placeholder="Jordi Martinez" autofocus autocomplete required>
+            </p>
+
+            <p>
+            <label for="pass">Contraseña: </label>
+            <input type="text" name="pass" id="pass"
+            placeholder="qwer123"
+            pattern="[a-z](4)[0-9](3)"/> (la contraseña debe contener 4 letras y 3 números)
+            </p>
+
+            <p>
+            <label for="fono">Teléfono: </label>
+            <input type="tel" name="fono" id="fono" placeholder="+34935551234">
+            </p>
+
+            <p>
+            <label for="correoe">Email: </label>
+            <input type="email" name="email" id="email" placeholder="
+             micorreo@dominio.com">
+            </p>
+
+            
+            <p>
+            <label for="num">Número de zapatos: </label>
+            <input type="number" name="num" id="num" min="2" max="20" step="2" placeholder="2">
+            </p>
+
+            <p>
+            <label for="f_envio">Fecha de envio: </label>
+            <input type="date" name="f_envio" id="f_envio" min="2013-02-16">
+            </p>
+
+            
+            <p>
+            <fieldset>
+               <legend>Selecciona la prioridad: </legend>
+                  <p><label> <input type="radio" name="prior" value="baja" checked> Baja </label></p>
+                  <p><label> <input type="radio" name="prior" value="media"> Media </label></p>
+                  <p><label> <input type="radio" name="prior" value="alta"> Alta </label></p>
+
+            </fieldset>
+            </p>
+
+            <p>
+            <fieldset>
+               <legend>Selecciona el tipo de envio: </legend>
+                  <p><label><input type="checkbox" name="envio" value="urgente" checked> Urgente </label></p>
+                  <p><label><input type="checkbox" name="envio" value="acuse"> Con acuse de recibo </label></p>
+                  <p><label><input type="checkbox" name="envio" value="reembolso"> Contra reembolso </label></p>
+            </fieldset>
+            </p>
+
+
+
+            <input type="submit" value="Validar">
+
+
+
+
